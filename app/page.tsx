@@ -187,9 +187,6 @@ export default function Home() {
             <Link href="/docs" className="text-neutral-600 hover:text-neutral-900 transition-colors font-medium">
               Docs
             </Link>
-            <a href="https://github.com/pratik356/EmailSniff" target="_blank" rel="noopener noreferrer" className="text-neutral-600 hover:text-neutral-900 transition-colors font-medium flex items-center gap-1">
-              GitHub <ExternalLink className="w-3.5 h-3.5" />
-            </a>
           </div>
         </div>
       </nav>
@@ -681,14 +678,6 @@ export default function Home() {
             >
               Documentation <ArrowRight className="w-3.5 h-3.5" />
             </Link>
-            <a
-              href="https://github.com/pratik356/EmailSniff"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-neutral-200 hover:border-neutral-300 text-neutral-700 text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
-            >
-              GitHub
-            </a>
           </div>
         </div>
       </section>
@@ -700,7 +689,7 @@ export default function Home() {
             <div className="w-6 h-6 rounded-md bg-gradient-to-br from-neutral-900 to-neutral-400 flex items-center justify-center overflow-hidden">
               <Image src="/logo.png" alt="EmailSniff Logo" width={24} height={24} className="w-full h-full object-cover" />
             </div>
-            <p>© {new Date().getFullYear()} EmailSniff · Open Source MIT</p>
+            <p>© {new Date().getFullYear()} EmailSniff</p>
           </div>
           <div className="flex flex-wrap items-center gap-4 sm:gap-6 mt-2 sm:mt-0 font-medium justify-center sm:justify-end">
             <Link href="/disposable-email-checker" className="hover:text-neutral-900 transition-colors">

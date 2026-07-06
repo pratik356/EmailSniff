@@ -141,7 +141,7 @@ export default function MxRecordCheckerPage() {
 
         {/* Footer */}
         <div className="border-t border-neutral-100 mt-16 pt-8 text-center text-xs text-neutral-400">
-          <p>© {new Date().getFullYear()} EmailSniff · Open Source MIT</p>
+          <p>© {new Date().getFullYear()} EmailSniff</p>
         </div>
       </div>
     </main>

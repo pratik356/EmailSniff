@@ -102,7 +102,7 @@ export default function SpamEmailCheckerPage() {
               },
               {
                 q: "Can I host this list myself?",
-                a: "Our verification project is fully open-source. However, querying our cached cloud API is faster (under 15ms) and guarantees you have the latest hourly database blacklist."
+                a: "Our verification project is fully free to use. However, querying our cached cloud API is faster (under 15ms) and guarantees you have the latest hourly database blacklist."
               },
               {
                 q: "How does this prevent user fraud?",
@@ -141,7 +141,7 @@ export default function SpamEmailCheckerPage() {
 
         {/* Footer */}
         <div className="border-t border-neutral-100 mt-16 pt-8 text-center text-xs text-neutral-400">
-          <p>© {new Date().getFullYear()} EmailSniff · Open Source MIT</p>
+          <p>© {new Date().getFullYear()} EmailSniff</p>
         </div>
       </div>
     </main>

@@ -98,7 +98,7 @@ export default function FreeEmailVerifierPage() {
             {[
               {
                 q: "Is this email verifier tool free?",
-                a: "Yes, it is 100% free and open-source. We don't require credit cards, signups, or auth keys. Just use the playground or send API queries. No cap."
+                a: "Yes, it is 100% free. We don't require credit cards, signups, or auth keys. Just use the playground or send API queries. No cap."
               },
               {
                 q: "How accurate is the verification?",
@@ -141,7 +141,7 @@ export default function FreeEmailVerifierPage() {
 
         {/* Footer */}
         <div className="border-t border-neutral-100 mt-16 pt-8 text-center text-xs text-neutral-400">
-          <p>© {new Date().getFullYear()} EmailSniff · Open Source MIT</p>
+          <p>© {new Date().getFullYear()} EmailSniff</p>
         </div>
       </div>
     </main>
