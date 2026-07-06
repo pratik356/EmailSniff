@@ -187,7 +187,7 @@ export default function Home() {
             <Link href="/docs" className="text-neutral-600 hover:text-neutral-900 transition-colors font-medium">
               Docs
             </Link>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-neutral-600 hover:text-neutral-900 transition-colors font-medium flex items-center gap-1">
+            <a href="https://github.com/pratik356/EmailSniff" target="_blank" rel="noopener noreferrer" className="text-neutral-600 hover:text-neutral-900 transition-colors font-medium flex items-center gap-1">
               GitHub <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>
@@ -682,7 +682,7 @@ export default function Home() {
               Documentation <ArrowRight className="w-3.5 h-3.5" />
             </Link>
             <a
-              href="https://github.com"
+              href="https://github.com/pratik356/EmailSniff"
               target="_blank"
               rel="noopener noreferrer"
               className="border border-neutral-200 hover:border-neutral-300 text-neutral-700 text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
