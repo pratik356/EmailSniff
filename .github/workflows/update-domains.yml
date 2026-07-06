@@ -1,0 +1,66 @@
+name: Update Disposable Domains
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install || pnpm install || yarn install
+
+      - name: Update domains list
+        run: node scripts/update-domains.mjs
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet data/disposable_domains.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit changes
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/disposable_domains.json
+          git commit -m "chore: update disposable domains list [skip ci]"
+
+      - name: Push changes
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git push
+
+      - name: Trigger Vercel deployment
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          curl -X POST "https://api.vercel.com/v13/deployments?teamId=${{ secrets.VERCEL_TEAM_ID }}" \
+            -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "name": "disposable-email-api",
+              "gitSource": {
+                "type": "github",
+                "ref": "'${{ github.ref }}'",
+                "repo": "'${{ github.repository }}'"
+              }
+            }' || true
