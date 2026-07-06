@@ -158,6 +158,10 @@ export default function Home() {
     }
   };
 
+  const scrollToTerminal = () => {
+    document.getElementById('sandbox-terminal')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <main className="relative min-h-screen bg-white text-neutral-900 font-sans antialiased overflow-hidden z-0">
       
@@ -183,10 +187,16 @@ export default function Home() {
             </div>
             <span className="text-[17px] font-bold tracking-tight text-neutral-900">EmailSniff</span>
           </Link>
-          <div className="flex items-center gap-6 text-sm">
+          <div className="flex items-center gap-4 text-sm">
             <Link href="/docs" className="text-neutral-600 hover:text-neutral-900 transition-colors font-medium">
               Docs
             </Link>
+            <button
+              onClick={scrollToTerminal}
+              className="bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-semibold px-4 py-2 rounded-full transition-colors shadow-sm cursor-pointer"
+            >
+              Try Now
+            </button>
           </div>
         </div>
       </nav>
@@ -215,7 +225,7 @@ export default function Home() {
           </div>
 
           {/* Right — terminal */}
-          <div className="w-full">
+          <div className="w-full" id="sandbox-terminal">
             <div className="relative bg-transparent backdrop-blur-[40px] rounded-xl border border-white/50 shadow-[0_20px_50px_rgba(0,0,0,0.12)] overflow-hidden group transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.2)] hover:border-white/80">
               
               {/* Interactive glow overlay */}
